@@ -55,16 +55,16 @@ export default {
           this.curMode = 'Dark';
           document.getElementById('body').className = 'dark-mode';
           allElements = document.getElementsByClassName('links light-mode');
-          for (let i = 0; i < allElements.length; i++) {
-            allElements[i].setAttribute('class', 'links dark-mode');
+          while (allElements.length > 0) {
+            allElements[0].setAttribute('class', 'links dark-mode');
           }
           break;
         case 'Dark':
           this.curMode = 'Light';
           document.getElementById('body').className = 'light-mode';
           allElements = document.getElementsByClassName('links dark-mode');
-          for (let j = 0; j < allElements.length; j++) {
-            allElements[j].setAttribute('class', 'links light-mode');
+          while (allElements.length > 0) {
+            allElements[0].setAttribute('class', 'links light-mode');
           }
           break;
         default:
@@ -110,11 +110,11 @@ a {
   color: black;
 }
 
-a.dark-mode {
+a.links.dark-mode {
   color: #ffffff;
 }
 
-a.light-mode {
+a.links.light-mode {
   color: #111111;
 }
 </style>
