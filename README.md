@@ -1,6 +1,7 @@
-# personal-site
+# Mark Babatunde's Personal Site
 
-> Personal website
+This is my personal website currently created in Vue.js
+
 
 ## Build Setup
 
