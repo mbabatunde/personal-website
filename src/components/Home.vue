@@ -23,4 +23,12 @@ export default {
     margin-right: auto;
     margin-top: 5%;
 }
+
+h1 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
 </style>

@@ -105,6 +105,7 @@ nav {
 
 nav a {
   text-decoration: none;
+  font-size: 1.25em;
 }
 
 .active {
