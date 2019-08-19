@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-      <p>{{ msg }} Page</p>
+      <img src="../assets/avataaars.svg">
+      <h1>Hello, I'm {{ name }}!</h1>
+      <h3>Student. Developer. Artist.</h3>
   </div>
 </template>
 
@@ -9,7 +11,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      msg: 'Home',
+      name: 'Mark Babatunde',
     };
   },
 };
