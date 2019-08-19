@@ -1,6 +1,6 @@
 <template>
   <div class="blog">
-      <p>{{ msg }} page</p>
+      <h1>{{ msg }}</h1>
   </div>
 </template>
 
@@ -9,11 +9,14 @@ export default {
   name: 'Blog',
   data() {
     return {
-      msg: 'Blog',
+      msg: 'Coming soon! Stay tuned!',
     };
   },
 };
 </script>
 
 <style scoped>
+h1 {
+    margin-top: 5%;
+}
 </style>

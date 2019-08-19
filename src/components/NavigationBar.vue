@@ -1,6 +1,6 @@
 <template>
   <nav>
-      <img class="avatar" src="../assets/avataaars-2.svg">
+      <img @click=notificationTest class="avatar" src="../assets/avataaars-2.svg">
       <router-link
       class="links"
       :class="{ 'light-mode': isLightMode, 'dark-mode': isDarkMode, 'active': hover }"
@@ -79,6 +79,18 @@ export default {
           this.curMode = 'Light';
       }
     },
+    notificationTest() {
+      if (!('Notification' in window)) {
+        alert('This browser does not support system notifications.');
+      }
+      Notification.requestPermission().then((result) => {
+        console.log(result);
+      });
+
+      if (Notification.permission === 'granted') {
+        const notification = new Notification('Oh! You clicked on my avataar!');
+      }
+    },
   },
 };
 </script>
@@ -111,7 +123,7 @@ nav a {
 .active {
   text-decoration: underline;
   /* Vuejs Color */
-  text-decoration-color: #00ccff;
+  text-decoration-color: #ffffff;
   color: #ffffff;
 }
 
@@ -124,7 +136,16 @@ a.links.dark-mode {
 }
 
 a.links.light-mode {
-  color: #111111;
+  color: #ffffff;
+}
+
+button {
+  background-color: #ffffff;
+  border-radius: 100px;
+  font-size: 1em;
+  font-family: 'Roboto';
+  display: inline-block;
+  vertical-align: middle;
 }
 </style>
 
@@ -139,12 +160,12 @@ a.dark-mode {
 }
 
 body.light-mode {
-  background-color: #EEEEEE;
-  color: #111111;
+  background-color: #65C9FF;
+  color: #ffffff;
 }
 
 a.light-mode {
-  color: #111111
+  color: #ffffff
 }
 </style>
 
