@@ -1,11 +1,9 @@
 <template>
   <nav>
-      <img class="avatar" src="../assets/avataaars.svg">
+      <img class="avatar" src="../assets/avataaars-2.svg">
       <router-link
-      class="links light-mode"
-      @mouseover="hover = true"
-      @mouseleave="hover = false"
-      :class="{ active: hover }"
+      class="links"
+      :class="{ 'light-mode': isLightMode, 'dark-mode': isDarkMode, 'active': hover }"
       v-on:click=toggleDark
       v-for="routes in links"
       v-bind:key="routes.id"
@@ -43,28 +41,38 @@ export default {
       ],
       curMode: 'Light',
       hover: false,
+      isLightMode: true,
+      isDarkMode: false,
     };
   },
   methods: {
     toggleDark() {
       // const body = document.getElementById('body');
       // const currClass = body.className;
-      let allElements;
+      const allLightElements = document.getElementsByClassName('links light-mode');
+      const allDarkElements = document.getElementsByClassName('links dark-mode');
+      console.log(this.curMode);
       switch (this.curMode) {
         case 'Light':
+          console.log('the light');
           this.curMode = 'Dark';
+          this.isLightMode = false;
+          this.isDarkMode = true;
           document.getElementById('body').className = 'dark-mode';
-          allElements = document.getElementsByClassName('links light-mode');
-          while (allElements.length > 0) {
-            allElements[0].setAttribute('class', 'links dark-mode');
+          // allLightElements = document.getElementsByClassName('links light-mode');
+          while (allLightElements.length > 0) {
+            allLightElements[0].setAttribute('class', 'links dark-mode');
           }
           break;
         case 'Dark':
+          console.log('being triggered');
           this.curMode = 'Light';
+          this.isLightMode = true;
+          this.isDarkMode = false;
           document.getElementById('body').className = 'light-mode';
-          allElements = document.getElementsByClassName('links dark-mode');
-          while (allElements.length > 0) {
-            allElements[0].setAttribute('class', 'links light-mode');
+          // allDarkElements = document.getElementsByClassName('links dark-mode');
+          while (allDarkElements.length > 0) {
+            allDarkElements[0].setAttribute('class', 'links light-mode');
           }
           break;
         default:
@@ -77,22 +85,21 @@ export default {
 
 <style scoped>
 .links {
-  margin-right: 10px;
+  margin-right: 10%;
   display: inline-block;
-  vertical-align: top;
-  margin-top: 2%;
+  vertical-align: middle;
+  margin-top: 1%;
 }
 
 .avatar {
-  margin-right: 10px;
+  margin-right: 10%;
   display: inline-block;
   vertical-align: top;
-  width: 7%;
-  height: 7%;
+  width: 40px;
+  height: 40px;
 }
 
 nav {
-  border-bottom: 3px solid #000000;
   margin-bottom: 2%;
 }
 
@@ -103,7 +110,8 @@ nav a {
 .active {
   text-decoration: underline;
   /* Vuejs Color */
-  text-decoration-color: #42b883;
+  text-decoration-color: #00ccff;
+  color: #ffffff;
 }
 
 a {
