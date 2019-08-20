@@ -32,5 +32,6 @@ export default new Router({
       component: Resume,
     },
   ],
+  mode: 'history',
   linkExactActiveClass: 'active',
 });
