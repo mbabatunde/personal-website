@@ -99,7 +99,8 @@ export default {
 .links {
   margin-right: 10%;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
+  position: relative;
   margin-top: 1%;
 }
 
@@ -107,12 +108,14 @@ export default {
   margin-right: 10%;
   display: inline-block;
   vertical-align: top;
+  position: relative;
   width: 40px;
   height: 40px;
 }
 
 nav {
   margin-bottom: 2%;
+  /* display: inline-block; */
 }
 
 nav a {
