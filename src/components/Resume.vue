@@ -1,6 +1,7 @@
 <template>
   <div class="resume">
-      <h1>{{ msg }}</h1>
+      <h1>{{ name }}</h1>
+      <iframe src="https://drive.google.com/file/d/1RGJnZ6EqAeWG8I7NGyMfxzLJP6WvQvsf/preview" width="700" height="640"></iframe>
   </div>
 </template>
 
@@ -9,8 +10,13 @@ export default {
   name: 'Resume',
   data() {
     return {
-      msg: 'Coming soon!',
+      msg: 'Will be making an interactive resume',
     };
+  },
+  methods: {
+    // resizeIframe(obj) {
+    //   obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+    // },
   },
 };
 </script>

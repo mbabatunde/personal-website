@@ -6,7 +6,6 @@ import About from '@/components/About';
 import Blog from '@/components/Blog';
 import Resume from '@/components/Resume';
 
-
 Vue.use(Router);
 
 export default new Router({
