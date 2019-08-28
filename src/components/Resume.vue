@@ -7,9 +7,9 @@
 
 <script>
 export default {
-  name: 'Resume',
   data() {
     return {
+      name: 'Resume',
       msg: 'Will be making an interactive resume',
     };
   },
